@@ -110,12 +110,17 @@ section { padding-block: clamp(48px, 7vw, 88px); border-top: 1px solid var(--lin
 .mode .pose { font-family: var(--f-mono); font-size: .76rem; color: var(--gold); letter-spacing: .04em; }
 .mode h3 { font-size: 1.1rem; }
 .mode p { margin: 0; color: var(--fg-soft); font-size: .93rem; }
-.mode-media { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 20px; max-width: 640px; }
-.mode-media figure { margin: 0; display: grid; gap: 8px; min-width: 0; }
-.mode-media video, .mode-media img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; display: block; border-radius: 14px; background: #000; }
+.mode-media { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 28px; align-items: start; }
+.mode-media figure { margin: 0; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.mode-media video, .mode-media img { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; display: block; border-radius: 14px; background: #000; }
 .mode-media figcaption { font-size: .84rem; color: var(--fg-soft); }
 @media (max-width: 900px) { .modes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 560px) { .modes { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .modes, .mode-media { grid-template-columns: 1fr; } }
+.features { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 32px; padding-top: 28px; border-top: 1px solid var(--line); }
+.feat { display: grid; gap: 8px; align-content: start; }
+.feat h3 { font-size: 1.08rem; color: var(--led); }
+.feat p { margin: 0; color: var(--fg-soft); font-size: .95rem; }
+@media (max-width: 820px) { .features { grid-template-columns: 1fr; } }
 .downloads { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 28px; }
 .downloads a { display: grid; gap: 2px; padding: 14px 16px; border-radius: 12px; border: 1px solid var(--line); background: var(--bg-2); text-decoration: none; transition: border-color .2s, transform .2s; }
 .downloads a:hover { border-color: var(--led); transform: translateY(-2px); }
@@ -169,17 +174,16 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; a
       <div>
         <div class="eyebrow">Science Club · HTL1 Lastenstraße Klagenfurt</div>
         <h1>Time<span>Flow</span></h1>
-        <p>Die digitale Sanduhr mit Uhr, Wecker und Thermometer: 128 LEDs, ein Lagesensor und ein Akku im 3D-gedruckten Gehäuse. Von Schülerinnen und Schülern entwickelt, als Bausatz zum Nachbauen.</p>
+        <p>Die digitale Sanduhr mit Uhr, Wecker, Thermometer und Labyrinth-Spiel: 128 LEDs, Lagesensor, Touch-Tasten und Akku im 3D-gedruckten Gehäuse. Von Schülerinnen und Schülern entwickelt, als Bausatz zum Nachbauen.</p>
         <div class="btns">
           <a class="btn btn-main" href="https://github.com/htl1-klagenfurt/SCC/tree/main/timeflow" rel="noopener">Bauanleitung auf GitHub</a>
           <a class="btn btn-ghost" href="#logbuch">Was gerade passiert</a>
         </div>
       </div>
       <div class="glass">
-        <div class="stage">
-          <video src="bilder/timeflow_final.mp4" poster="bilder/timeflow_final.jpg" autoplay muted loop playsinline width="478" height="850" aria-label="Video: die fertige TimeFlow, der LED-Sand rieselt, die Uhr wird umgedreht"></video>
-        </div>
-        <span class="hint">Die fertige TimeFlow</span>
+        <canvas id="sand" width="300" height="600" role="img" aria-label="Animierte LED-Sanduhr aus zwei 8×8-Matrizen"></canvas>
+        <button id="flip" type="button">Umdrehen ↻</button>
+        <span class="hint">Simulation: so rieselt TimeFlow</span>
       </div>
     </div>
   </section>
@@ -191,17 +195,10 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; a
         <h2>Sand aus Licht</h2>
         <p>Zwei LED-Matrizen stehen schräg übereinander, Ecke an Ecke. Wo sie sich berühren, ist der Hals der Sanduhr.</p>
       </div>
-      <div class="how">
-        <div class="steps">
-          <div class="step"><span class="k">SENSOR</span><h3>Wo ist unten?</h3><p>Ein Lagesensor misst die Schwerkraft. Dreht man die Uhr, weiß das Programm sofort, wohin der Sand fallen muss.</p></div>
-          <div class="step"><span class="k">SAND</span><h3>Jede LED ein Korn</h3><p>Ein Korn fällt nach unten, wenn darunter Platz ist, sonst rutscht es schräg zur Seite. So entstehen echte Sandhaufen.</p></div>
-          <div class="step"><span class="k">ZEIT</span><h3>Ein Korn pro Takt</h3><p>Durch den Hals darf immer nur ein Korn. Die Laufzeit stellst du selbst ein, von Sekunden bis zu Stunden.</p></div>
-        </div>
-        <div class="glass sim">
-          <canvas id="sand" width="300" height="600" role="img" aria-label="Animierte LED-Sanduhr aus zwei 8×8-Matrizen"></canvas>
-          <button id="flip" type="button">Umdrehen ↻</button>
-          <span class="hint">Simulation zum Ausprobieren</span>
-        </div>
+      <div class="steps">
+        <div class="step"><span class="k">SENSOR</span><h3>Wo ist unten?</h3><p>Ein Lagesensor misst die Schwerkraft. Dreht man die Uhr, weiß das Programm sofort, wohin der Sand fallen muss.</p></div>
+        <div class="step"><span class="k">SAND</span><h3>Jede LED ein Korn</h3><p>Ein Korn fällt nach unten, wenn darunter Platz ist, sonst rutscht es schräg zur Seite. So entstehen echte Sandhaufen.</p></div>
+        <div class="step"><span class="k">ZEIT</span><h3>Ein Korn pro Takt</h3><p>Durch den Hals darf immer nur ein Korn. Die Laufzeit stellst du selbst ein, von Sekunden bis zu Stunden.</p></div>
       </div>
     </div>
   </section>
@@ -211,22 +208,42 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; a
       <div class="sec-head">
         <div class="eyebrow">Vier Modi</div>
         <h2>Drehen statt Menü</h2>
-        <p>TimeFlow wechselt den Modus über die Lage: in die gewünschte Richtung drehen und kurz auf eine der beiden Touch-Tasten tippen.</p>
+        <p>Welcher Modus läuft, entscheidet die Lage: Der Lagesensor erkennt, wie TimeFlow steht, ein Tipp auf eine der beiden kapazitiven Touch-Tasten bestätigt.</p>
       </div>
       <div class="modes">
         <div class="mode"><span class="pose">▮ aufrecht</span><h3>Sanduhr</h3><p>Der Sand fällt immer nach unten. Laufzeit in Stunden, Minuten und Sekunden einstellbar.</p></div>
-        <div class="mode"><span class="pose">◀ 90° nach links</span><h3>Uhr &amp; Wecker</h3><p>Zeigt die Uhrzeit dank Echtzeituhr mit eigener Knopfzelle. Mit Weckfunktion und Piepton.</p></div>
-        <div class="mode"><span class="pose">▶ 90° nach rechts</span><h3>Info</h3><p>Wechselt automatisch zwischen Temperatur in °C und Luftfeuchtigkeit in %.</p></div>
-        <div class="mode"><span class="pose">▬ auf den Rücken</span><h3>Easter Egg</h3><p>Animationen, die man durch Schütteln wechselt, und ein Labyrinth-Spiel bis 64×64 Felder, gesteuert durch Neigen.</p></div>
+        <div class="mode"><span class="pose">◀ 90° nach links</span><h3>Uhr &amp; Wecker</h3><p>Die Uhrzeit in Ziffern über beide Matrizen, gestützt von einer Echtzeituhr mit eigener Knopfzelle. Mit Weckfunktion.</p></div>
+        <div class="mode"><span class="pose">▶ 90° nach rechts</span><h3>Info</h3><p>Temperatur in °C und Luftfeuchtigkeit in % als Zahlen, automatisch im Wechsel.</p></div>
+        <div class="mode"><span class="pose">▬ auf den Rücken</span><h3>Labyrinth &amp; Animationen</h3><p>Ein Labyrinth-Spiel, gesteuert durch Neigen. Animationen wechseln durch Schütteln.</p></div>
       </div>
+
+      <div class="features">
+        <div class="feat">
+          <h3>Labyrinth mit Köpfchen</h3>
+          <p>Jedes Labyrinth wird zufällig neu erzeugt und wächst mit jedem gelösten Level, von 8×8 bis 64×64 Feldern. Das Display zeigt immer nur einen Ausschnitt, die zweite Matrix zeigt mit einem Pfeil, wo das Ziel liegt. Den Weg dorthin muss man selbst finden, indem man das Gerät neigt.</p>
+        </div>
+        <div class="feat">
+          <h3>Alle Sensoren im Gehäuse</h3>
+          <p>Lagesensor, Echtzeituhr, Temperatur- und Feuchtesensor, zwei Touch-Tasten, Buzzer, Akku und Ladeelektronik: alles sauber verbaut in einem Gehäuse, geladen wird über USB-C.</p>
+        </div>
+        <div class="feat">
+          <h3>Eigene App für LED-Designs</h3>
+          <p>Die Schülerinnen und Schüler haben dazu einen eigenen Animations-Editor entwickelt. Damit gestaltet man Bild für Bild, was auf den beiden LED-Matrizen erscheint, und spielt das Ergebnis direkt in die Firmware ein.</p>
+        </div>
+      </div>
+
       <div class="mode-media">
+        <figure>
+          <video src="bilder/timeflow_final.mp4" poster="bilder/timeflow_final.jpg" autoplay muted loop playsinline width="478" height="850" aria-label="Video: die fertige weiße TimeFlow, der LED-Sand rieselt, die Uhr wird umgedreht"></video>
+          <figcaption>Die fertige TimeFlow</figcaption>
+        </figure>
         <figure>
           <video src="bilder/timeflow_blau_modi.mp4" poster="bilder/timeflow_blau_modi.jpg" autoplay muted loop playsinline width="478" height="850" aria-label="Video: TimeFlow in Blau wechselt beim Drehen die Modi"></video>
           <figcaption>Drehen, tippen, neuer Modus</figcaption>
         </figure>
         <figure>
           <img src="bilder/foto_temperaturanzeige.jpg" alt="TimeFlow liegt quer und zeigt die Temperatur an" loading="lazy">
-          <figcaption>Info-Modus: Temperatur und Luftfeuchte</figcaption>
+          <figcaption>Info-Modus: Temperatur</figcaption>
         </figure>
       </div>
     </div>

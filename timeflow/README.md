@@ -38,6 +38,11 @@ TimeFlow wechselt den Modus über die Lage: Gerät drehen, kurz auf eine der bei
 
 Alle Details zu Tasten und Menüs stehen in der [Bedienungsanleitung](anleitungen/TimeFlow_Bedienungsanleitung.pdf).
 
+**Highlights**
+- **Labyrinth mit Köpfchen:** zufällig erzeugt, wächst mit jedem Level von 8×8 bis 64×64 Feldern. Das Display zeigt nur einen Ausschnitt, die zweite Matrix zeigt per Pfeil, wo das Ziel liegt. Gesteuert wird durch Neigen.
+- **Zahlen statt Sand:** Uhrzeit, Temperatur und Luftfeuchtigkeit erscheinen als Ziffern über beide Matrizen.
+- **Eigene App für LED-Designs:** Die Schülerinnen und Schüler haben einen Animations-Editor entwickelt, mit dem man Animationen Bild für Bild gestaltet und in die Firmware übernimmt.
+
 ## 2. Bauteile
 
 Pro Sanduhr (vollständig in der [Packungsliste](anleitungen/TimeFlow_Packungsliste.pdf)):
