@@ -90,6 +90,13 @@ section { padding-block: clamp(48px, 7vw, 88px); border-top: 1px solid var(--lin
 .gallery figcaption { font-size: .84rem; color: var(--fg-soft); }
 @media (max-width: 700px) { .gallery { grid-template-columns: 1fr; } .gallery .tall { grid-row: auto; } }
 
+.posters { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; max-width: 760px; }
+.posters figure { margin: 0; display: grid; gap: 8px; align-content: start; }
+.posters img { width: 100%; height: auto; display: block; border-radius: 10px; box-shadow: 0 24px 50px -24px rgba(0, 0, 0, .8); transition: transform .3s; }
+.posters img:hover { transform: rotate(-1deg) scale(1.02); }
+.posters figcaption { font-size: .84rem; color: var(--fg-soft); }
+@media (max-width: 560px) { .posters { grid-template-columns: 1fr; } }
+
 .log { display: grid; gap: 0; border-left: 2px solid var(--line); margin-left: 6px; }
 .entry { position: relative; padding: 0 0 26px 26px; display: grid; gap: 4px; }
 .entry::before { content: ""; position: absolute; left: -7px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--bg); border: 2px solid var(--c, var(--fg-soft)); }
@@ -204,6 +211,26 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; a
         <figure>
           <img src="bilder/innenaufbau_led_matrizen.jpg" alt="CAD-Ansicht: zwei LED-Matrizen diagonal im Gehäuse" loading="lazy">
           <figcaption>Innenaufbau im CAD: zwei Matrizen, Ecke an Ecke</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="plakate">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Plakate</div>
+        <h2>Aufgehängt in der ganzen Schule</h2>
+        <p>Mit diesen Plakaten haben wir die Workshops angekündigt.</p>
+      </div>
+      <div class="posters">
+        <figure>
+          <img src="bilder/plakat_htl1_trifft_ms_woelfnitz.jpg" alt="Plakat: HTL1 Lastenstraße trifft MS Wölfnitz, präsentiert vom Science Club, mit Sanduhr TimeFlow" loading="lazy" width="900" height="1274">
+          <figcaption>HTL1 Lastenstraße trifft MS Wölfnitz</figcaption>
+        </figure>
+        <figure>
+          <img src="bilder/plakat_sanduhr_science_club.jpg" alt="Plakat: Sanduhr mit HTL1-Logo, Schriftzug TimeFlow und Science Club im Sand" loading="lazy" width="900" height="1125">
+          <figcaption>TimeFlow · Science Club</figcaption>
         </figure>
       </div>
     </div>
