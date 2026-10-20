@@ -7,14 +7,11 @@ Was war, was läuft, was kommt. Neueste Einträge oben.
 ## 🔜 Als Nächstes
 
 - [ ] **Ende November / Anfang Dezember 2026: neue Workshops mit der MS Wölfnitz** in der Co-Creation Corner
-- [ ] **TimeFlow-Firmware veröffentlichen**: Workshop-Version aufräumen, kommentieren und in [`timeflow/firmware/`](timeflow/firmware/) hochladen
-- [ ] **Schaltplan** als Bild und Fritzing-Datei ergänzen
-- [ ] **Druckprofile** für die Gehäuseteile (Ausrichtung, Stützen) dokumentieren
 - [ ] **Nächstes SCC-Projekt** festlegen
 
 ## ▶️ Läuft gerade
 
-- **Herbst 2026:** Projektdokumentation geht online. TimeFlow wird als offener Bausatz für andere Schulen aufbereitet.
+- **Oktober 2026:** TimeFlow ist ein offener Bausatz. Firmware, Schaltplan, 3D-Druckdateien, Aufbau- und Bedienungsanleitung sind online.
 
 ## ✅ Was war
 
@@ -24,8 +21,8 @@ Zwei Workshop-Nachmittage mit Mittelschülerinnen und Mittelschülern der MS Wö
 ### Sommersemester 2026: Ein eigener Raum: die Co-Creation Corner
 Gemeinsam mit den Schülerinnen und Schülern entsteht an der HTL1 die Co-Creation Corner, ein eigener Raum für den Science Club mit 3D-Drucker, Werkzeug, Laptops und Couch. Die Schülerinnen und Schüler haben ihn selbst mitgestaltet: geplant, verkabelt und aufgebaut.
 
-### Mai 2026: Gehäuse fertig konstruiert
-Die finale Gehäuseversion mit Matrix-Halterung, Akkufach und Namensfeld ist fertig, die Teile werden für die Workshops vorgedruckt.
+### Mai 2026: TimeFlow ist fertig
+Gehäuse, Elektronik und Firmware sind fertig: Sanduhr, Uhr mit Wecker, Temperatur- und Feuchteanzeige und versteckte Easter Eggs. Auf der Rückseite führt ein QR-Code direkt zu diesem Repository.
 
 ### März 2026: Erste Prototypen
 Die Elektronik läuft auf dem Steckbrett, der Sand „rieselt“ über zwei LED-Matrizen. Erste Gehäuse-Entwürfe entstehen im CAD.

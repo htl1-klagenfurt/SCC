@@ -2,53 +2,38 @@
 
 > TimeFlow – ein Projekt des Science Club der HTL1 Lastenstraße Klagenfurt. Siehe [ATTRIBUTION.md](../../ATTRIBUTION.md).
 
-## Entwicklungsumgebung
+Der Code liegt in [`SCC_Sanduhr_Main_Code_02/`](SCC_Sanduhr_Main_Code_02/). Er enthält alle vier Modi (Sanduhr, Uhr & Wecker, Info, Easter Egg mit Animationen und Labyrinth).
+
+## Installation
 
 1. **Arduino IDE** installieren.
 2. Unter *Einstellungen → Zusätzliche Boardverwalter-URLs* die ESP8266-Boardunterstützung eintragen und im Boardverwalter **esp8266** installieren.
-3. Board **LOLIN(WEMOS) D1 R2 & mini** auswählen.
+3. Board **LOLIN(WEMOS) D1 R2 & mini** wählen.
 4. Bibliotheken über die Bibliotheksverwaltung installieren:
-   - **MD_MAX72XX** (LED-Matrizen mit MAX7219)
-   - eine Bibliothek für den **MPU-6050**, z. B. *Adafruit MPU6050*, oder direkt über `Wire.h` auslesen
+   - **LedControl** (LED-Matrizen mit MAX7219)
+   - **MPU6050** (Lagesensor, `MPU6050.h`)
+   - **RTClib** von Adafruit (Echtzeituhr DS1307)
+   - **DHT sensor library** von Adafruit (DHT22)
+5. Den Ordner `SCC_Sanduhr_Main_Code_02` öffnen und hochladen.
 
-## Programmablauf
+## Pins
 
-```
-setup()
-  Matrizen starten, Helligkeit niedrig einstellen
-  Lagesensor starten
-  obere Matrix mit Sand füllen
-
-loop()  (etwa alle 20–40 ms)
-  1. Beschleunigung lesen  → Richtung „unten“ bestimmen
-  2. Richtung um 45° drehen, weil die Matrizen schräg eingebaut sind
-  3. jedes Korn einen Schritt bewegen:
-       Feld darunter frei?         → nach unten
-       sonst schräg links/rechts?  → dorthin
-       sonst                       → liegen bleiben
-  4. Hals-Timer abgelaufen?        → ein Korn von oben nach unten übergeben
-  5. Matrizen neu zeichnen
-  6. Touch-Taster abfragen         → Zeit wählen / neu starten
-```
-
-## Die wichtigsten Stellschrauben
-
-| Wert | Wirkung |
+| Funktion | Pin |
 |---|---|
-| Anzahl Körner | wie „voll“ die Uhr ist |
-| Hals-Intervall in ms | Laufzeit = Körner × Intervall |
-| Bewegungs-Takt in ms | wie flüssig der Sand rieselt |
-| Helligkeit 0–15 | Sichtbarkeit und Akkulaufzeit |
-| Schwelle Lagesensor | ab welcher Neigung der Sand zu rieseln beginnt |
+| Matrix DIN / CS / CLK | D8 / D3 / D0 |
+| Touch-Taste 1 / 2 | D5 / D6 |
+| DHT22 | D4 |
+| Buzzer | D7 |
+| I²C SCL / SDA (MPU-6050 auf 0x69, DS1307) | D1 / D2 |
 
-## Code
+## Stellschrauben im Code
 
-Der Programmcode der Workshop-Version wird hier ergänzt. Wer eine eigene Version schreibt, nennt den Science Club der HTL1 Lastenstraße Klagenfurt im Kopfkommentar:
+| Konstante | Wirkung |
+|---|---|
+| `N_SAND` | Anzahl der Sandkörner (Standard 32) |
+| `SAND_INTERVAL` | Millisekunden zwischen zwei Sand-Schritten |
+| `SHAKE_THRESHOLD` | wie stark geschüttelt werden muss |
+| `DISPLAY_0_ROTATION`, `DISPLAY_1_ROTATION` | Ausrichtung der beiden Matrizen |
+| `hourglass_hours/minutes/seconds` | Standard-Laufzeit beim Einschalten (5 s) |
 
-```cpp
-/*
- * Basierend auf TimeFlow – ein Projekt des Science Club
- * der HTL1 Lastenstraße Klagenfurt
- * https://github.com/htl1-klagenfurt/SCC  ·  CC BY-NC-SA 4.0
- */
-```
+Eigene Versionen bitte mit dem Kopfkommentar zur Namensnennung weitergeben (siehe erste Zeilen der `.ino`-Datei).

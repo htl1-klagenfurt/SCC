@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="bilder/gehaeuse_cad_ansichten.jpg" alt="TimeFlow Gehäuse im CAD" width="100%">
+  <img src="bilder/foto_timeflow.jpg" alt="Die fertige TimeFlow" width="320">
 </p>
 
 # TimeFlow – die digitale Sanduhr
@@ -7,133 +7,102 @@
 > **TimeFlow – ein Projekt des Science Club der HTL1 Lastenstraße Klagenfurt.**
 > Nachbau erlaubt, mit Namensnennung: siehe [ATTRIBUTION.md](../ATTRIBUTION.md). · 🌐 [Projekt-Website](https://htl1-klagenfurt.github.io/SCC/timeflow/)
 
-TimeFlow ist eine Sanduhr ohne Sand. Zwei LED-Matrizen zeigen die Körner, ein Lagesensor erkennt, wie die Uhr gehalten wird, und die Körner „rieseln“ immer nach unten. Dreht man die Uhr um, läuft die Zeit von vorne. Akku, Ladeelektronik und Mikrocontroller sitzen in einem 3D-gedruckten Gehäuse.
+TimeFlow ist eine Sanduhr ohne Sand. Zwei LED-Matrizen zeigen die Körner, ein Lagesensor erkennt, wie die Uhr gehalten wird, und die Körner „rieseln“ immer nach unten. Dazu kommen eine Uhr mit Wecker, eine Temperatur- und Feuchteanzeige und versteckte Easter Eggs. Akku, Ladeelektronik und Mikrocontroller sitzen in einem 3D-gedruckten Gehäuse.
 
-Das Projekt ist als **Bausatz** gedacht: einfach genug, dass Mittelschülerinnen und Mittelschüler ihn in einem Workshop unter Anleitung zusammenbauen können, und vielseitig genug, um weiterzuentwickeln. Als Eieruhr, Lern-Timer, Spieluhr oder für eigene Ideen.
+TimeFlow ist als **Bausatz** gedacht: einfach genug, dass Mittelschülerinnen und Mittelschüler ihn in einem Workshop unter Anleitung zusammenbauen können.
+
+## Downloads
+
+| | Datei |
+|---|---|
+| 📘 Aufbauanleitung | [TimeFlow_Aufbauanleitung.pdf](anleitungen/TimeFlow_Aufbauanleitung.pdf) |
+| 📗 Bedienungsanleitung | [TimeFlow_Bedienungsanleitung.pdf](anleitungen/TimeFlow_Bedienungsanleitung.pdf) |
+| 📋 Packungsliste | [TimeFlow_Packungsliste.pdf](anleitungen/TimeFlow_Packungsliste.pdf) |
+| 💾 Firmware | [firmware/SCC_Sanduhr_Main_Code_02](firmware/SCC_Sanduhr_Main_Code_02/) |
+| 🖨️ 3D-Druckdateien (3MF) | [druckdateien/](druckdateien/) |
+| 📐 CAD (STEP) | [cad/](cad/) |
+| 🔌 Schaltplan (Fritzing) | [fritzing/Digitale_Sanduhr_03.fzz](fritzing/Digitale_Sanduhr_03.fzz) |
 
 ---
 
-## Inhalt
+## 1. Die vier Modi
 
-1. [So funktioniert es](#1-so-funktioniert-es)
-2. [Bauteile](#2-bauteile)
-3. [Gehäuse drucken](#3-gehäuse-drucken)
-4. [Elektronik aufbauen](#4-elektronik-aufbauen)
-5. [Software](#5-software)
-6. [Zusammenbau](#6-zusammenbau)
-7. [Ideen zum Weiterentwickeln](#7-ideen-zum-weiterentwickeln)
+TimeFlow wechselt den Modus über die Lage: Gerät drehen, kurz auf eine der beiden Touch-Tasten tippen.
 
----
+| Lage | Modus | Funktion |
+|---|---|---|
+| aufrecht | **Sanduhr** | Sand fällt mit der Schwerkraft. Laufzeit in Stunden, Minuten, Sekunden einstellbar |
+| 90° nach links | **Uhr & Wecker** | Uhrzeit über die Echtzeituhr, Weckfunktion mit Piepton |
+| 90° nach rechts | **Info** | wechselt zwischen Temperatur (°C) und Luftfeuchtigkeit (%) |
+| auf dem Rücken | **Easter Egg** | Animationen (Schütteln = nächste) und Labyrinth-Spiel bis 64×64 Felder |
 
-## 1. So funktioniert es
-
-```
-          ┌──────────────┐
-          │  Lagesensor  │  MPU-6050: wo ist „unten“?
-          └──────┬───────┘
-                 │ I²C
-┌────────┐   ┌───┴───────────┐   SPI   ┌───────────────┐
-│  Akku  ├──►│ Mikrocontroller├───────►│ LED-Matrix oben│  8×8
-│ + Lade-│   │  (ESP8266)    │         ├───────────────┤
-│ modul  │   └───┬───────────┘         │LED-Matrix unten│  8×8
-└───▲────┘       │                     └───────────────┘
-    │        Touch-Taster
-  USB-C      (Start / Modus)
-```
-
-- **Zwei 8×8-LED-Matrizen** stehen um 45° gedreht übereinander, Ecke an Ecke. Wo sich die Ecken berühren, ist der „Hals“ der Sanduhr.
-- Jede leuchtende LED ist ein **Sandkorn**. Ein Korn fällt nach unten, wenn das Feld darunter frei ist, sonst rutscht es schräg nach links oder rechts. So entstehen ganz von selbst Sandhaufen.
-- Der **Lagesensor** misst die Schwerkraft. Daraus berechnet das Programm, wo gerade „unten“ ist. Liegt die Uhr schräg, rieselt der Sand schräg.
-- Durch den Hals darf in festen Abständen **nur ein Korn** von oben nach unten wandern. Aus der Anzahl der Körner und dem Abstand ergibt sich die Laufzeit. Bei 60 Körnern und einer Sekunde Abstand ist das eine Minute.
+Alle Details zu Tasten und Menüs stehen in der [Bedienungsanleitung](anleitungen/TimeFlow_Bedienungsanleitung.pdf).
 
 ## 2. Bauteile
 
-Pro Sanduhr:
+Pro Sanduhr (vollständig in der [Packungsliste](anleitungen/TimeFlow_Packungsliste.pdf)):
 
-| Anzahl | Bauteil | Hinweis |
-|---|---|---|
-| 1 | Mikrocontroller **Wemos D1 mini** (ESP8266) oder kompatibel | per USB programmierbar |
-| 2 | **LED-Matrix 8×8 mit MAX7219**-Treiber | in Reihe geschaltet (Daisy Chain) |
-| 1 | **Lagesensor MPU-6050** (Beschleunigung + Gyroskop) | I²C |
-| 1 | **Li-Ion/LiPo-Akku 3,7 V**, 500–1800 mAh | Größe nach Platz im Gehäuse |
-| 1 | **Lade- und Spannungsmodul** für 1-Zellen-Li-Ion (Laden + 5 V Ausgang) | mit Schutzschaltung |
-| 1 | **Kapazitiver Touch-Taster** | Start, Zeit wählen |
-| 1 | **USB-C-Buchse** | zum Laden |
-| 1 | Schiebeschalter (Ein/Aus) | optional |
-| – | Lochrasterplatine, Litze, Stiftleisten, Schrauben | |
+| Anzahl | Bauteil |
+|---|---|
+| 1 | Mikrocontroller **D1 mini** (ESP8266) |
+| 2 | **LED-Matrix 8×8** mit MAX7219, rot |
+| 1 | Lagesensor **MPU-6050** |
+| 1 | Echtzeituhr **DS1307** mit Knopfzelle LIR2032 |
+| 1 | Temperatur- und Feuchtesensor **DHT22** |
+| 2 | Kapazitive **Touch-Taste** (TTP223) |
+| 1 | Passiver **Buzzer** auf Lochrasterplatine |
+| 1 | **Li-Ion-Akku 14500** (AA-Format, 3,7 V) mit Halter |
+| 1 | **4in1-Lademodul** für 3,7-V-Li-Ion (Laden + 5 V) |
+| 1 | **USB-C-Buchse** (nur Strom) |
+| 2 / 7 / 2 | M3 Gewindeeinsätze / M3×5 / M3×40 Schrauben |
 
-Optional für eigene Erweiterungen: Echtzeituhr (DS1307), Temperatur- und Feuchtesensor (DHT22), RGB-Matrizen statt roter.
-
-> ⚠️ **Akku-Sicherheit:** Nur Akkus mit Schutzschaltung und ein passendes Lademodul verwenden. Den Akku nie kurzschließen, nicht quetschen und nicht unbeaufsichtigt laden.
+> ⚠️ **Akku-Sicherheit:** Nur Akkus mit Schutzschaltung und das passende Lademodul verwenden. Akku nie kurzschließen, nicht quetschen und nicht unbeaufsichtigt laden.
 
 ## 3. Gehäuse drucken
 
-Die CAD-Dateien liegen im STEP-Format im Ordner [`cad/`](cad/). Sie lassen sich in jedem gängigen CAD- oder Slicer-Programm öffnen.
+Druckfertige Dateien im Ordner [`druckdateien/`](druckdateien/):
 
-| Teil | Datei | Anzahl |
+| Datei | Inhalt |
+|---|---|
+| `01_Frontplatte.3mf` | Frontplatte mit Matrix-Halterung |
+| `02_Wand.3mf` | Seitenwand (mit und ohne Namensfeld) |
+| `03_Rueckwand_Deckel.3mf` | Rückwand / Deckel |
+| `04_Kleinteile.3mf` | Akkuhalterung, Matrix-Klemmen, Uhrmodul-Halterung |
+| `06_Gesamter_Timeflow.3mf` | alle Teile auf einen Blick |
+
+Die Einzelteile als STEP liegen in [`cad/`](cad/). Ins Namensfeld kommt ein eigenes Namensschild. Der Schriftzug „HTL1 Lastenstraße“ bleibt laut [ATTRIBUTION.md](../ATTRIBUTION.md) erhalten.
+
+## 4. Elektronik
+
+<p align="center"><img src="bilder/schaltplan.png" alt="Schaltplan TimeFlow" width="520"></p>
+
+| Bauteil | Pin | D1 mini |
 |---|---|---|
-| Wand mit Namensfeld | [`wand_mit_namensfeld.step`](cad/wand_mit_namensfeld.step) | 1 |
-| Wand ohne Namensfeld (Alternative) | [`wand_ohne_namensfeld.step`](cad/wand_ohne_namensfeld.step) | – |
-| Deckel | [`deckel.step`](cad/deckel.step) | 1 |
-| Halterung LED-Matrizen | [`led_matrix_halterung.step`](cad/led_matrix_halterung.step) | 1 |
-| Klemme für Matrix | [`matrix_klemme.step`](cad/matrix_klemme.step) | 2 |
-| Halterung Akku | [`batterie_halterung.step`](cad/batterie_halterung.step) | 1 |
-| Halterung Uhr-/Controller-Modul | [`uhr_modul_halterung.step`](cad/uhr_modul_halterung.step) | 1 |
+| LED-Matrix (Kette aus 2) | DIN / CS / CLK | **D8** / **D3** / **D0** |
+| Touch-Taste 1 / 2 | I/O | **D5** / **D6** |
+| DHT22 | Data | **D4** |
+| Buzzer | Signal | **D7** |
+| MPU-6050 und DS1307 (I²C) | SCL / SDA | **D1** / **D2** |
+| MPU-6050 | AD0 | 3V3 (Adresse 0x69) |
+| Lademodul | OUT 5V / GND | 5V / G |
 
-**Druck-Empfehlung:** PLA oder PETG, 0,2 mm Schichthöhe, 15–20 % Füllung. Die großen Gehäuseteile flach auf die größte Fläche legen, Stützstrukturen nur bei Überhängen über 45°. Im Namensfeld ist Platz für den eigenen Namen. Das Feld mit „HTL1 Lastenstraße“ bleibt laut [ATTRIBUTION.md](../ATTRIBUTION.md) erhalten.
+Versorgung: Matrizen, Echtzeituhr und Lagesensor an 5 V, Touch-Tasten und DHT22 an 3,3 V. Die Schritt-für-Schritt-Verkabelung mit Kabellängen und Farben steht in der [Aufbauanleitung](anleitungen/TimeFlow_Aufbauanleitung.pdf).
 
-<p align="center">
-  <img src="bilder/innenaufbau_led_matrizen.jpg" alt="Innenaufbau: zwei LED-Matrizen diagonal übereinander" width="420">
-</p>
+**Tipp:** Zuerst alles auf dem Steckbrett testen, erst dann ins Gehäuse einbauen.
 
-## 4. Elektronik aufbauen
+## 5. Firmware
 
-**Referenz-Verdrahtung** für den D1 mini. Die Pins lassen sich in der Software anpassen.
+Code und Installation: [firmware/README.md](firmware/README.md)
 
-| Von | Pin | an D1 mini |
-|---|---|---|
-| LED-Matrix 1 | VCC / GND | 5V / G |
-| | DIN | D7 (GPIO13) |
-| | CLK | D5 (GPIO14) |
-| | CS | D8 (GPIO15) |
-| LED-Matrix 2 | DIN | an DOUT von Matrix 1 |
-| | CLK, CS, VCC, GND | parallel zu Matrix 1 |
-| MPU-6050 | VCC / GND | 3V3 / G |
-| | SDA | D2 (GPIO4) |
-| | SCL | D1 (GPIO5) |
-| Touch-Taster | VCC / GND | 3V3 / G |
-| | OUT / SIG | D6 (GPIO12) |
-| Lademodul | Akku + / – | Akku |
-| | 5 V Ausgang | 5V / G am D1 mini |
-| USB-C-Buchse | VBUS / GND | Eingang Lademodul |
+## 6. Zusammenbau (Kurzfassung)
 
-**Tipps**
-
-- Zuerst alles auf dem **Steckbrett** testen, erst dann auf der Lochrasterplatine löten.
-- Die LED-Matrizen ziehen bei voller Helligkeit den meisten Strom. Eine niedrige Helligkeitsstufe spart Akku und reicht in Innenräumen völlig.
-- Kurze Kabel verwenden und alle Masseleitungen (GND) gemeinsam verbinden.
-
-## 5. Software
-
-Programmiert wird mit der **Arduino IDE** und der ESP8266-Boardunterstützung. Aufbau und Ablauf beschreibt [firmware/README.md](firmware/README.md).
-
-## 6. Zusammenbau
-
-1. LED-Matrizen in die Halterung setzen und mit den beiden Klemmen fixieren.
-2. Lagesensor **fest** und gerade montieren. Er bestimmt, wo „unten“ ist.
-3. Akku in die Akkuhalterung legen, Lademodul und USB-C-Buchse so platzieren, dass die Buchse von außen erreichbar ist.
-4. Mikrocontroller in die Modulhalterung setzen, alles verdrahten und **vor dem Schließen testen**: Uhr kippen, Sand muss mitrieseln.
-5. Wand und Deckel aufsetzen und verschrauben.
-6. Namensfeld beschriften, fertig.
-
-## 7. Ideen zum Weiterentwickeln
-
-- **Schüttelfunktion:** Uhr schütteln setzt die Zeit zurück.
-- **Zeit wählen** per Touch: 1, 3, 5 oder 10 Minuten.
-- **Spielmodus:** Würfel, Reaktionsspiel, „heißer Draht“ mit Lagesensor.
-- **Echtzeituhr** als Tischuhr mit Sanduhr-Animation.
-- **WLAN:** Der ESP8266 kann die Laufzeit per Handy einstellen.
-- **Eigenes Gehäuse** designen, dabei an das HTL1-Namensfeld denken.
+1. Buzzer auf die Lochrasterplatine löten und die Verteiler-Kabel für GND, 5 V und 3,3 V vorbereiten.
+2. Stiftleisten an D1 mini, Matrizen und Touch-Tasten löten.
+3. Matrizen verbinden (OUT → IN), einsetzen und mit den Klemmen fixieren.
+4. Akkuhalter und Echtzeituhr über den Matrizen montieren.
+5. Alle Module nach der Tabelle oben verkabeln, Lademodul und USB-C anlöten.
+6. Knopfzelle und Akku einsetzen, **Firmware hochladen und testen**.
+7. Namensschild einsetzen, Deckel aufsetzen und verschrauben.
 
 ---
 

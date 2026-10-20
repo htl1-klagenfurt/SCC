@@ -28,8 +28,8 @@ Im Science Club der [HTL1 Lastenstraße Klagenfurt](https://htl1-klagenfurt.at) 
 
 | | |
 |---|---|
-| 🔜 **Als Nächstes** | Ende November / Anfang Dezember 2026: neue Workshops mit der MS Wölfnitz · Firmware und Schaltplan veröffentlichen |
-| ▶️ **Läuft gerade** | TimeFlow wird als offener Bausatz für andere Schulen dokumentiert |
+| 🔜 **Als Nächstes** | Ende November / Anfang Dezember 2026: neue Workshops mit der MS Wölfnitz |
+| ▶️ **Läuft gerade** | TimeFlow ist ein offener Bausatz: Firmware, Schaltplan, Druckdateien und Anleitungen sind online |
 | ✅ **Zuletzt** | Sommersemester 2026: eigene Co-Creation Corner an der HTL1, von den Schüler:innen selbst geplant, verkabelt und gebaut · zwei Workshops mit der MS Wölfnitz |
 
 Alle Stationen von der ersten Idee bis heute stehen im **[Logbuch](LOGBUCH.md)**.
