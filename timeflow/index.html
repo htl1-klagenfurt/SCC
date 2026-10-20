@@ -90,12 +90,12 @@ section { padding-block: clamp(48px, 7vw, 88px); border-top: 1px solid var(--lin
 .gallery figcaption { font-size: .84rem; color: var(--fg-soft); }
 @media (max-width: 700px) { .gallery { grid-template-columns: 1fr; } .gallery .tall { grid-row: auto; } }
 
-.posters { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; max-width: 760px; }
-.posters figure { margin: 0; display: grid; gap: 8px; align-content: start; }
-.posters img { width: 100%; height: auto; display: block; border-radius: 10px; box-shadow: 0 24px 50px -24px rgba(0, 0, 0, .8); transition: transform .3s; }
+.posters { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; }
+.posters figure { margin: 0; display: grid; gap: 8px; min-width: 0; max-width: 100%; }
+.posters img { height: clamp(320px, 52vw, 540px); width: auto; max-width: 100%; display: block; border-radius: 10px; box-shadow: 0 24px 50px -24px rgba(0, 0, 0, .8); transition: transform .3s; }
 .posters img:hover { transform: rotate(-1deg) scale(1.02); }
 .posters figcaption { font-size: .84rem; color: var(--fg-soft); }
-@media (max-width: 560px) { .posters { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .posters img { height: auto; width: 100%; } }
 
 .log { display: grid; gap: 0; border-left: 2px solid var(--line); margin-left: 6px; }
 .entry { position: relative; padding: 0 0 26px 26px; display: grid; gap: 4px; }
