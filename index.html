@@ -18,6 +18,9 @@ body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--f-
 a { color: inherit; }
 :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
 .wrap { max-width: 880px; margin-inline: auto; padding-block: clamp(40px, 9vw, 100px) 48px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 40px; }
+.logos-top { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.logos-top a { display: block; }
+.hero-photo { margin-top: 28px; }
 .logo { height: 64px; width: auto; background: #fff; border-radius: 10px; padding: 8px 14px; }
 .eyebrow { font-family: var(--f-mono); font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
 h1 { font-size: clamp(2rem, 1.4rem + 3vw, 3.2rem); line-height: 1.1; margin: 10px 0 14px; text-wrap: balance; }
@@ -63,10 +66,14 @@ footer { border-top: 1px solid var(--line); padding-top: 20px; display: flex; fl
 <body>
 <main class="wrap">
   <header>
-    <img class="logo" src="assets/science_club_logo.png" alt="Science Club">
+    <div class="logos-top">
+      <img class="logo" src="assets/science_club_logo.png" alt="Science Club">
+      <a href="https://htl1-klagenfurt.at" rel="noopener"><img class="logo" src="assets/htl1_logo.svg" alt="HTL1 Lastenstraße Klagenfurt"></a>
+    </div>
     <div class="eyebrow" style="margin-top:28px">HTL1 Lastenstraße Klagenfurt</div>
     <h1>Technik machen, nicht nur darüber reden.</h1>
     <p>Im Science Club entwickeln Schülerinnen und Schüler aus Elektrotechnik, Mechatronik und Maschinenbau echte Produkte: von der Idee über Elektronik, Software und 3D-Druck bis zum fertigen Bausatz.</p>
+    <figure class="after hero-photo"><img src="assets/corner/team_co_creation_corner.jpg" alt="Das Science-Club-Team mit den betreuenden Lehrern in der Co-Creation Corner, einige sitzen auf der Couch" width="934" height="526"><figcaption>Das SCC-Team mit den betreuenden Lehrern in der Co-Creation Corner</figcaption></figure>
   </header>
 
   <section class="about" aria-labelledby="was">
@@ -115,7 +122,6 @@ footer { border-top: 1px solid var(--line); padding-top: 20px; display: flex; fl
       <figure><img src="assets/corner/entwurf_ansicht.jpg" alt="Foto des Raums und darunter dieselbe Ansicht mit farbig eingezeichneten Wänden, Bildschirm und Anschlüssen" loading="lazy"><figcaption>Entwurf: Farben, Bildschirm, Anschlüsse</figcaption></figure>
       <figure><img src="assets/corner/plakat_co_creation_corner.jpg" alt="Plakat: Hier entsteht der HTL1 Co-Creation Corner – Innovation needs space" loading="lazy"><figcaption>Plakat zum Tag der offenen Tür</figcaption></figure>
     </div>
-    <figure class="after"><img src="assets/corner/team_co_creation_corner.jpg" alt="Das Science-Club-Team mit den betreuenden Lehrern in der Co-Creation Corner, einige sitzen auf der Couch" loading="lazy" width="934" height="526"><figcaption>Das SCC-Team mit den betreuenden Lehrern in der Co-Creation Corner</figcaption></figure>
   </section>
 
   <a class="project" href="timeflow/">
