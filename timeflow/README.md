@@ -5,7 +5,7 @@
 # TimeFlow – die digitale Sanduhr
 
 > **TimeFlow – ein Projekt des Science Club der HTL1 Lastenstraße Klagenfurt.**
-> Nachbau erlaubt, mit Namensnennung: siehe [ATTRIBUTION.md](../ATTRIBUTION.md).
+> Nachbau erlaubt, mit Namensnennung: siehe [ATTRIBUTION.md](../ATTRIBUTION.md). · 🌐 [Projekt-Website](https://htl1-klagenfurt.github.io/SCC/timeflow/)
 
 TimeFlow ist eine Sanduhr ohne Sand. Zwei LED-Matrizen zeigen die Körner, ein Lagesensor erkennt, wie die Uhr gehalten wird, und die Körner „rieseln“ immer nach unten. Dreht man die Uhr um, läuft die Zeit von vorne. Akku, Ladeelektronik und Mikrocontroller sitzen in einem 3D-gedruckten Gehäuse.
 

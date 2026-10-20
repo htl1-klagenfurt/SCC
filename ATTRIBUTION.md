@@ -11,7 +11,7 @@ TimeFlow und alle weiteren Projekte in diesem Repository wurden vom **Science Cl
 
 2. **Verlinken** auf beide Adressen:
    - https://htl1-klagenfurt.at
-   - https://github.com/the-kra/SCC
+   - https://github.com/htl1-klagenfurt/SCC
 
 3. **Sichtbar machen**
    - **Am Gerät:** Das Namensfeld „HTL1 Lastenstraße“ am Gehäuse bleibt erhalten. Wer das Gehäuse neu gestaltet, bringt den Hinweis „Design: HTL1 Lastenstraße Klagenfurt“ gut lesbar am Gerät an.

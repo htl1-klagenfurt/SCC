@@ -49,6 +49,6 @@ Der Programmcode der Workshop-Version wird hier ergänzt. Wer eine eigene Versio
 /*
  * Basierend auf TimeFlow – ein Projekt des Science Club
  * der HTL1 Lastenstraße Klagenfurt
- * https://github.com/the-kra/SCC  ·  CC BY-NC-SA 4.0
+ * https://github.com/htl1-klagenfurt/SCC  ·  CC BY-NC-SA 4.0
  */
 ```

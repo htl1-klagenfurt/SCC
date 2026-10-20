@@ -6,7 +6,7 @@
 
 # Science Club (SCC) – HTL1 Lastenstraße Klagenfurt
 
-**Technik machen, nicht nur darüber reden.**
+**Technik machen, nicht nur darüber reden.** · 🌐 [htl1-klagenfurt.github.io/SCC](https://htl1-klagenfurt.github.io/SCC/)
 
 Im Science Club der [HTL1 Lastenstraße Klagenfurt](https://htl1-klagenfurt.at) entwickeln Schülerinnen und Schüler aus Elektrotechnik, Mechatronik und Maschinenbau echte Produkte: von der Idee über Elektronik, Software und 3D-gedrucktes Gehäuse bis zum fertigen Bausatz. In der **Co-Creation Corner** geben sie ihr Wissen als Peer-Teacher an Mittelschülerinnen und Mittelschüler weiter, die den Bausatz unter ihrer Anleitung selbst zusammenbauen.
 
