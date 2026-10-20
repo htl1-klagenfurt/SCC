@@ -16,6 +16,16 @@ Im Science Club der [HTL1 Lastenstraße Klagenfurt](https://htl1-klagenfurt.at) 
 |---|---|---|
 | [**TimeFlow – die digitale Sanduhr**](timeflow/) | LED-Sanduhr mit zwei 8×8-Matrizen, Lagesensor und Akku im 3D-gedruckten Gehäuse | Prototyp und Workshops 2026 |
 
+## Was passiert gerade?
+
+| | |
+|---|---|
+| 🔜 **Als Nächstes** | TimeFlow-Firmware und Schaltplan veröffentlichen · neue Workshop-Runde 2026/27 planen |
+| ▶️ **Läuft gerade** | TimeFlow wird als offener Bausatz für andere Schulen dokumentiert |
+| ✅ **Zuletzt** | Mai 2026: Workshops mit Mittelschulen in der Co-Creation Corner |
+
+Alle Stationen von der ersten Idee bis heute stehen im **[Logbuch](LOGBUCH.md)**.
+
 ## Nachbauen erlaubt, mit Namensnennung
 
 Alle Unterlagen in diesem Repository dürfen für Unterricht, Workshops und private Projekte nachgebaut und angepasst werden. Bedingung ist, dass die HTL1 Lastenstraße Klagenfurt als Urheberin genannt, verlinkt und sichtbar gemacht wird. Details stehen in [ATTRIBUTION.md](ATTRIBUTION.md), die Lizenz in [LICENSE.md](LICENSE.md).
