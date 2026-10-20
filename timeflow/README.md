@@ -115,5 +115,5 @@ Code und Installation: [firmware/README.md](firmware/README.md)
   <img src="../assets/science_club_logo.png" alt="Science Club" height="60">
   &nbsp;&nbsp;&nbsp;
   <img src="../assets/htl1_logo.svg" alt="HTL1 Lastenstraße Klagenfurt" height="60"><br>
-  <sub>TimeFlow – ein Projekt des Science Club der <a href="https://htl1-klagenfurt.at">HTL1 Lastenstraße Klagenfurt</a> · Lizenz <a href="../LICENSE.md">CC BY-NC-SA 4.0</a></sub>
+  <sub>TimeFlow – ein Projekt des Science Club der <a href="https://htl1-klagenfurt.at">HTL1 Lastenstraße Klagenfurt</a> · Lizenz <a href="../LICENSE.md">CC BY-NC-SA 4.0</a><br><i>Projektbetreuung: DI Bernd Hollauf und DI Theodor Kranz</i></sub>
 </p>

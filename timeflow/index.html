@@ -149,6 +149,9 @@ section { padding-block: clamp(48px, 7vw, 88px); border-top: 1px solid var(--lin
 
 footer { border-top: 1px solid var(--line); padding-block: 32px; }
 footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; font-size: .84rem; color: var(--fg-soft); }
+.foot-right { display: grid; gap: 4px; justify-items: end; text-align: right; }
+.coach { font-style: italic; opacity: .8; }
+@media (max-width: 640px) { .foot-right { justify-items: start; text-align: left; } }
 .logos { display: flex; gap: 12px; align-items: center; }
 .logos img { height: 36px; width: auto; background: #fff; border-radius: 6px; padding: 4px 8px; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } html { scroll-behavior: auto; } }
@@ -381,7 +384,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; a
       <img src="../assets/science_club_logo.png" alt="Science Club">
       <img src="../assets/htl1_logo.svg" alt="HTL1 Lastenstraße Klagenfurt">
     </div>
-    <span><a href="../legal.html">Impressum &amp; Datenschutz</a> · © 2026 HTL1 Lastenstraße Klagenfurt</span>
+    <span class="foot-right"><span class="coach">Projektbetreuung: DI Bernd Hollauf und DI Theodor Kranz</span><span><a href="../legal.html">Impressum &amp; Datenschutz</a> · © 2026 HTL1 Lastenstraße Klagenfurt</span></span>
   </div>
 </footer>
 
