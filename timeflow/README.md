@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="bilder/gehaeuse_ansichten.jpg" alt="TimeFlow Gehäuse in vier Ansichten" width="100%">
+  <img src="bilder/gehaeuse_cad_ansichten.jpg" alt="TimeFlow Gehäuse im CAD" width="100%">
 </p>
 
 # TimeFlow – die digitale Sanduhr
