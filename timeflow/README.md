@@ -1,4 +1,10 @@
 <p align="center">
+  <a href="https://htl1-klagenfurt.github.io/SCC/"><img src="../assets/science_club_logo.png" alt="Science Club" height="60"></a>
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://htl1-klagenfurt.at"><img src="../assets/htl1_logo.svg" alt="HTL1 Lastenstraße Klagenfurt" height="60"></a>
+</p>
+
+<p align="center">
   <img src="bilder/foto_timeflow.jpg" alt="Die fertige TimeFlow" width="320">
 </p>
 
@@ -112,8 +118,8 @@ Code und Installation: [firmware/README.md](firmware/README.md)
 ---
 
 <p align="center">
-  <img src="../assets/science_club_logo.png" alt="Science Club" height="60">
+  <a href="https://htl1-klagenfurt.github.io/SCC/"><img src="../assets/science_club_logo.png" alt="Science Club" height="60"></a>
   &nbsp;&nbsp;&nbsp;
-  <img src="../assets/htl1_logo.svg" alt="HTL1 Lastenstraße Klagenfurt" height="60"><br>
+  <a href="https://htl1-klagenfurt.at"><img src="../assets/htl1_logo.svg" alt="HTL1 Lastenstraße Klagenfurt" height="60"></a><br>
   <sub>TimeFlow – ein Projekt des Science Club der <a href="https://htl1-klagenfurt.at">HTL1 Lastenstraße Klagenfurt</a> · Lizenz <a href="../LICENSE.md">CC BY-NC-SA 4.0</a><br><i>Projektbetreuung: DI(FH) Bernd Hollauf, MSc und DI Theodor Kranz, BSc BEd</i></sub>
 </p>

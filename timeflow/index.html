@@ -38,6 +38,7 @@ h1, h2, h3 { margin: 0; line-height: 1.12; text-wrap: balance; }
 .top { border-bottom: 1px solid var(--line); }
 .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.brand a { display: block; line-height: 0; }
 .brand img { height: 34px; width: auto; background: #fff; border-radius: 6px; padding: 4px 8px; }
 .top nav { display: flex; gap: 20px; font-size: .92rem; }
 .top nav a { text-decoration: none; color: var(--fg-soft); }
@@ -162,7 +163,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; a
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="https://htl1-klagenfurt.at" rel="noopener"><img src="../assets/science_club_logo.png" alt="Science Club HTL1"></a>
+    <span class="brand"><a href="../"><img src="../assets/science_club_logo.png" alt="Science Club HTL1 – Startseite"></a><a href="https://htl1-klagenfurt.at" rel="noopener"><img src="../assets/htl1_logo.svg" alt="HTL1 Lastenstraße Klagenfurt"></a></span>
     <nav aria-label="Abschnitte">
       <a href="#prinzip">So funktioniert's</a>
       <a href="#modi">Modi</a>
@@ -384,8 +385,8 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; a
 <footer>
   <div class="wrap">
     <div class="logos">
-      <img src="../assets/science_club_logo.png" alt="Science Club">
-      <img src="../assets/htl1_logo.svg" alt="HTL1 Lastenstraße Klagenfurt">
+      <a href="../"><img src="../assets/science_club_logo.png" alt="Science Club HTL1 – Startseite"></a>
+      <a href="https://htl1-klagenfurt.at" rel="noopener"><img src="../assets/htl1_logo.svg" alt="HTL1 Lastenstraße Klagenfurt"></a>
     </div>
     <span class="foot-right"><span class="coach">Projektbetreuung: DI(FH) Bernd Hollauf, MSc und DI Theodor Kranz, BSc BEd</span><span><a href="../legal.html">Impressum &amp; Datenschutz</a> · © 2026 HTL1 Lastenstraße Klagenfurt</span></span>
   </div>

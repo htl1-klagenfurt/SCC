@@ -1,7 +1,7 @@
 <p align="center">
-  <img src="assets/science_club_logo.png" alt="Science Club" height="90">
+  <a href="https://htl1-klagenfurt.github.io/SCC/"><img src="assets/science_club_logo.png" alt="Science Club" height="90"></a>
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="assets/htl1_logo.svg" alt="HTL1 Lastenstraße Klagenfurt" height="90">
+  <a href="https://htl1-klagenfurt.at"><img src="assets/htl1_logo.svg" alt="HTL1 Lastenstraße Klagenfurt" height="90"></a>
 </p>
 
 # Science Club (SCC) – HTL1 Lastenstraße Klagenfurt
