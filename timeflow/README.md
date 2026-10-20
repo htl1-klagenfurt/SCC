@@ -34,12 +34,12 @@ TimeFlow wechselt den Modus über die Lage: Gerät drehen, kurz auf eine der bei
 | aufrecht | **Sanduhr** | Sand fällt mit der Schwerkraft. Laufzeit in Stunden, Minuten, Sekunden einstellbar |
 | 90° nach links | **Uhr & Wecker** | Uhrzeit über die Echtzeituhr, Weckfunktion mit Piepton |
 | 90° nach rechts | **Info** | wechselt zwischen Temperatur (°C) und Luftfeuchtigkeit (%) |
-| auf dem Rücken | **Easter Egg** | Animationen (Schütteln = nächste) und Labyrinth-Spiel bis 64×64 Felder |
+| ??? | **Easter Egg** | ein versteckter Modus – wird nicht verraten 😉 |
 
 Alle Details zu Tasten und Menüs stehen in der [Bedienungsanleitung](anleitungen/TimeFlow_Bedienungsanleitung.pdf).
 
 **Highlights**
-- **Labyrinth mit Köpfchen:** zufällig erzeugt, wächst mit jedem Level von 8×8 bis 64×64 Feldern. Das Display zeigt nur einen Ausschnitt, die zweite Matrix zeigt per Pfeil, wo das Ziel liegt. Gesteuert wird durch Neigen.
+- **Labyrinth mit Köpfchen:** zufällig erzeugt, wächst mit jedem Level von 8×8 bis 64×64 Feldern. Das Display zeigt nur einen Ausschnitt, die zweite Matrix zeigt per Pfeil, wo das Ziel liegt. Gesteuert wird durch Neigen. Wo es sich versteckt, findet ihr selbst heraus.
 - **Zahlen statt Sand:** Uhrzeit, Temperatur und Luftfeuchtigkeit erscheinen als Ziffern über beide Matrizen.
 - **Eigene App für LED-Designs:** Die Schülerinnen und Schüler haben einen Animations-Editor entwickelt, mit dem man Animationen Bild für Bild gestaltet und in die Firmware übernimmt.
 
