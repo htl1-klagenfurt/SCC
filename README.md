@@ -16,7 +16,7 @@ Im Science Club der [HTL1 Lastenstraße Klagenfurt](https://htl1-klagenfurt.at) 
 - **Erklären:** Peer-Teaching. Wer etwas gebaut hat, gibt sein Wissen an Mittelschülerinnen und Mittelschüler weiter, die den Bausatz unter Anleitung selbst bauen und verstehen.
 - **Raum:** Gemeinsam mit den Schülerinnen und Schülern haben wir die **Co-Creation Corner** geschaffen, selbst geplant, verkabelt und gebaut. Mit 3D-Drucker, Werkzeug, Laptops und Couch gibt sie dem Science Club Platz für die nächsten Projekte.
 
-<sub>Science-Club-Konzept: DI Bernd Hollauf und DI Theodor Kranz</sub>
+<sub>Science-Club-Konzept: DI Bernd Hollauf und DI Theodor Kranz, BSc BEd</sub>
 
 ## Projekte
 
