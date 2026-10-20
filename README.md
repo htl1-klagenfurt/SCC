@@ -10,6 +10,10 @@
 
 Im Science Club der [HTL1 Lastenstraße Klagenfurt](https://htl1-klagenfurt.at) entwickeln Schülerinnen und Schüler aus Elektrotechnik, Mechatronik und Maschinenbau echte Produkte: von der Idee über Elektronik, Software und 3D-gedrucktes Gehäuse bis zum fertigen Bausatz.
 
+## Was ist ein Science Club?
+
+Der Science Club ist eine unverbindliche Übung zur **Begabungs- und Begabtenförderung** in der Sekundarstufe I und II, mit einem Rahmencurriculum des Bildungsministeriums. Das Besondere sind die **Peer Groups**: Schülerinnen und Schüler der HTL1 (Sek II) entwickeln Projekte und geben ihr Wissen an Mittelschülerinnen und Mittelschüler (Sek I) weiter, die unter ihrer Anleitung selbst bauen. Im Mittelpunkt stehen Kreativität, kritisches Denken, Kommunikation und Kooperation.
+
 ## Die Idee: Lernen auf Augenhöhe
 
 - **Machen:** Echte Projekte statt Übungen. Die Schülerinnen und Schüler entwickeln selbstständig, die Lehrer coachen.

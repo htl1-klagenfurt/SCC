@@ -28,6 +28,14 @@ p { margin: 0; color: var(--fg-soft); max-width: 60ch; }
 .project h2 { margin: 0 0 6px; font-size: 1.5rem; }
 .project h2 span { color: var(--led); }
 .project .go { display: inline-block; margin-top: 12px; font-weight: 600; color: var(--led); }
+.about { display: grid; gap: 14px; }
+.about h2 { margin: 0 0 8px; font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.2rem); text-wrap: balance; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.about-grid p { max-width: none; }
+.about strong { color: var(--fg); }
+.skills { list-style: none; margin: 6px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.skills li { font-family: var(--f-mono); font-size: .8rem; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); color: var(--gold); }
+@media (max-width: 700px) { .about-grid { grid-template-columns: 1fr; } }
 .idea { display: grid; gap: 14px; }
 .idea h2 { margin: 0 0 8px; font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.2rem); }
 .pillars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
@@ -50,6 +58,18 @@ footer { border-top: 1px solid var(--line); padding-top: 20px; display: flex; fl
     <h1>Technik machen, nicht nur darüber reden.</h1>
     <p>Im Science Club entwickeln Schülerinnen und Schüler aus Elektrotechnik, Mechatronik und Maschinenbau echte Produkte: von der Idee über Elektronik, Software und 3D-Druck bis zum fertigen Bausatz.</p>
   </header>
+
+  <section class="about" aria-labelledby="was">
+    <div class="eyebrow">Was ist ein Science Club?</div>
+    <h2 id="was">Begabungsförderung, die über Schulgrenzen geht</h2>
+    <div class="about-grid">
+      <p>Der Science Club ist eine unverbindliche Übung zur <strong>Begabungs- und Begabtenförderung</strong> in der Sekundarstufe I und II, mit einem Rahmencurriculum des Bildungsministeriums. Begabte und interessierte Schülerinnen und Schüler tauchen in ein technisch-naturwissenschaftliches Thema ein, forschen, entwickeln und präsentieren ihre Ergebnisse.</p>
+      <p>Das Besondere sind die <strong>Peer Groups</strong>: Schülerinnen und Schüler der HTL1 (Sekundarstufe II) arbeiten mit Mittelschülerinnen und Mittelschülern (Sekundarstufe I) zusammen. Die Älteren entwickeln das Projekt und geben ihr Wissen als Peer-Teacher weiter, die Jüngeren bauen unter ihrer Anleitung selbst. So lernen beide: die einen das Erklären, die anderen das Bauen.</p>
+    </div>
+    <ul class="skills" aria-label="Die vier Kompetenzen">
+      <li>Kreativität</li><li>Kritisches Denken</li><li>Kommunikation</li><li>Kooperation</li>
+    </ul>
+  </section>
 
   <section class="idea" aria-labelledby="idee">
     <div class="eyebrow">Die Idee</div>
@@ -75,10 +95,10 @@ footer { border-top: 1px solid var(--line); padding-top: 20px; display: flex; fl
   </section>
 
   <a class="project" href="timeflow/">
-    <img src="timeflow/bilder/innenaufbau_led_matrizen.jpg" alt="TimeFlow im CAD: zwei LED-Matrizen diagonal im Gehäuse" width="1200" height="900">
+    <img src="timeflow/bilder/foto_timeflow.jpg" alt="Die fertige TimeFlow" loading="lazy">
     <div>
       <h2>Time<span>Flow</span></h2>
-      <p>Die digitale Sanduhr: zwei LED-Matrizen, ein Lagesensor und ein Akku im 3D-gedruckten Gehäuse. Als offener Bausatz zum Nachbauen.</p>
+      <p>Die digitale Sanduhr mit Uhr, Wecker, Thermometer, Labyrinth-Spiel und eigener App für LED-Animationen. Als offener Bausatz zum Nachbauen.</p>
       <span class="go">Zum Projekt →</span>
     </div>
   </a>
