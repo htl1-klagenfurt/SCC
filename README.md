@@ -8,7 +8,15 @@
 
 **Technik machen, nicht nur darüber reden.** · 🌐 [htl1-klagenfurt.github.io/SCC](https://htl1-klagenfurt.github.io/SCC/)
 
-Im Science Club der [HTL1 Lastenstraße Klagenfurt](https://htl1-klagenfurt.at) entwickeln Schülerinnen und Schüler aus Elektrotechnik, Mechatronik und Maschinenbau echte Produkte: von der Idee über Elektronik, Software und 3D-gedrucktes Gehäuse bis zum fertigen Bausatz. In der **Co-Creation Corner** geben sie ihr Wissen als Peer-Teacher an Mittelschülerinnen und Mittelschüler weiter, die den Bausatz unter ihrer Anleitung selbst zusammenbauen.
+Im Science Club der [HTL1 Lastenstraße Klagenfurt](https://htl1-klagenfurt.at) entwickeln Schülerinnen und Schüler aus Elektrotechnik, Mechatronik und Maschinenbau echte Produkte: von der Idee über Elektronik, Software und 3D-gedrucktes Gehäuse bis zum fertigen Bausatz.
+
+## Die Idee: Lernen auf Augenhöhe
+
+- **Machen:** Echte Projekte statt Übungen. Die Schülerinnen und Schüler entwickeln selbstständig, die Lehrer coachen.
+- **Erklären:** Peer-Teaching. Wer etwas gebaut hat, gibt sein Wissen an Mittelschülerinnen und Mittelschüler weiter, die den Bausatz unter Anleitung selbst bauen und verstehen.
+- **Raum:** Gemeinsam mit den Schülerinnen und Schülern haben wir die **Co-Creation Corner** geschaffen, selbst geplant, verkabelt und gebaut. Mit 3D-Drucker, Werkzeug, Laptops und Couch gibt sie dem Science Club Platz für die nächsten Projekte.
+
+<sub>Science-Club-Konzept: DI Bernd Hollauf und DI Theodor Kranz</sub>
 
 ## Projekte
 
@@ -22,7 +30,7 @@ Im Science Club der [HTL1 Lastenstraße Klagenfurt](https://htl1-klagenfurt.at) 
 |---|---|
 | 🔜 **Als Nächstes** | Ende November / Anfang Dezember 2026: neue Workshops mit der MS Wölfnitz · Firmware und Schaltplan veröffentlichen |
 | ▶️ **Läuft gerade** | TimeFlow wird als offener Bausatz für andere Schulen dokumentiert |
-| ✅ **Zuletzt** | Sommersemester 2026: eigener SCC-Workspace an der HTL1, von den Schüler:innen selbst geplant, verkabelt und gebaut · zwei Workshops mit der MS Wölfnitz |
+| ✅ **Zuletzt** | Sommersemester 2026: eigene Co-Creation Corner an der HTL1, von den Schüler:innen selbst geplant, verkabelt und gebaut · zwei Workshops mit der MS Wölfnitz |
 
 Alle Stationen von der ersten Idee bis heute stehen im **[Logbuch](LOGBUCH.md)**.
 

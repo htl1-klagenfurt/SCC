@@ -28,6 +28,15 @@ p { margin: 0; color: var(--fg-soft); max-width: 60ch; }
 .project h2 { margin: 0 0 6px; font-size: 1.5rem; }
 .project h2 span { color: var(--led); }
 .project .go { display: inline-block; margin-top: 12px; font-weight: 600; color: var(--led); }
+.idea { display: grid; gap: 14px; }
+.idea h2 { margin: 0 0 8px; font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.2rem); }
+.pillars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.pillar { background: var(--bg-2); border: 1px solid var(--line); border-radius: 16px; padding: 20px; display: grid; gap: 8px; align-content: start; }
+.pillar .k { font-family: var(--f-mono); font-size: .74rem; letter-spacing: .1em; color: var(--led); }
+.pillar h3 { margin: 0; font-size: 1.08rem; }
+.pillar p { font-size: .93rem; }
+.credit { font-size: .82rem; font-style: italic; opacity: .8; margin-top: 4px; }
+@media (max-width: 760px) { .pillars { grid-template-columns: 1fr; } }
 footer { border-top: 1px solid var(--line); padding-top: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 20px; font-size: .84rem; color: var(--fg-soft); }
 @media (max-width: 560px) { .project { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .project { transition: none; } }
@@ -39,11 +48,34 @@ footer { border-top: 1px solid var(--line); padding-top: 20px; display: flex; fl
     <img class="logo" src="assets/science_club_logo.png" alt="Science Club">
     <div class="eyebrow" style="margin-top:28px">HTL1 Lastenstraße Klagenfurt</div>
     <h1>Technik machen, nicht nur darüber reden.</h1>
-    <p>Im Science Club entwickeln Schülerinnen und Schüler aus Elektrotechnik, Mechatronik und Maschinenbau echte Produkte und zeigen Mittelschülerinnen und Mittelschülern als Peer-Teacher, wie man sie baut. Gearbeitet wird im eigenen SCC-Workspace mit 3D-Drucker, Laptops und Werkzeug, den die Schülerinnen und Schüler selbst geplant, verkabelt und aufgebaut haben.</p>
+    <p>Im Science Club entwickeln Schülerinnen und Schüler aus Elektrotechnik, Mechatronik und Maschinenbau echte Produkte: von der Idee über Elektronik, Software und 3D-Druck bis zum fertigen Bausatz.</p>
   </header>
 
+  <section class="idea" aria-labelledby="idee">
+    <div class="eyebrow">Die Idee</div>
+    <h2 id="idee">Lernen auf Augenhöhe</h2>
+    <div class="pillars">
+      <div class="pillar">
+        <span class="k">01 · MACHEN</span>
+        <h3>Echte Projekte statt Übungen</h3>
+        <p>Die Schülerinnen und Schüler sind Entwickler, nicht Teilnehmer. Sie planen, bauen und testen selbstständig, die Lehrer coachen. Das ist näher an Studium und Industrie als am normalen Unterricht.</p>
+      </div>
+      <div class="pillar">
+        <span class="k">02 · ERKLÄREN</span>
+        <h3>Peer-Teaching</h3>
+        <p>Wer etwas gebaut hat, kann es auch erklären. Unsere SCC-Mitglieder geben ihr Wissen als Peer-Teacher an Mittelschülerinnen und Mittelschüler weiter, die den Bausatz unter ihrer Anleitung selbst zusammenbauen und verstehen.</p>
+      </div>
+      <div class="pillar">
+        <span class="k">03 · RAUM</span>
+        <h3>Die Co-Creation Corner</h3>
+        <p>Gemeinsam mit den Schülerinnen und Schülern haben wir an der HTL1 einen eigenen Raum geschaffen: selbst geplant, verkabelt und gebaut. Mit 3D-Drucker, Werkzeug, Laptops und Couch gibt er dem Science Club Platz für die nächsten Projekte.</p>
+      </div>
+    </div>
+    <p class="credit">Science-Club-Konzept: DI Bernd Hollauf und DI Theodor Kranz</p>
+  </section>
+
   <a class="project" href="timeflow/">
-    <img src="timeflow/bilder/gehaeuse_cad_ansichten.jpg" alt="TimeFlow Gehäuse im CAD" width="2102" height="520">
+    <img src="timeflow/bilder/innenaufbau_led_matrizen.jpg" alt="TimeFlow im CAD: zwei LED-Matrizen diagonal im Gehäuse" width="1200" height="900">
     <div>
       <h2>Time<span>Flow</span></h2>
       <p>Die digitale Sanduhr: zwei LED-Matrizen, ein Lagesensor und ein Akku im 3D-gedruckten Gehäuse. Als offener Bausatz zum Nachbauen.</p>
